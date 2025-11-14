@@ -66,6 +66,9 @@ class ChatMessage(db.Model):
     content = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
 
+with app.app_context():
+     db.create_all()
+
 class SecureAdminIndex(AdminIndexView):
     def is_accessible(self):
         user_id = session.get("user_id")
@@ -564,6 +567,5 @@ def choose_model_for_prompt(text:str):
 
 # Start
 if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()
+  
     app.run(debug=True)
