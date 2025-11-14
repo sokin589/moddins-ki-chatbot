@@ -23,7 +23,6 @@
   <ItemGroup>
     <Compile Include="app1.py" />
     <Compile Include="ki.py" />
-    <Compile Include="online.py" />
     <Compile Include="templates.py" />
     <Compile Include="Webiste_Ki.py" />
   </ItemGroup>
@@ -37,6 +36,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Procfile" />
+    <Content Include="requirements.txt" />
     <Content Include="static\css\Admin.css" />
     <Content Include="static\css\formate.css" />
     <Content Include="static\css\profil.css" />
