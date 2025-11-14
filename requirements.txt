@@ -4,3 +4,4 @@ Flask-Admin
 Werkzeug
 ollama
 gunicorn
+flask-admin==1.6.1
