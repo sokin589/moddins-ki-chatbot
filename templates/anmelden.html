@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Anmelden</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/formate.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main class="center-wrap">
+        <form class="card" method="POST" action="{{ url_for('anmelden') }}">
+            <h1>Anmelden</h1>
+
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <div class="form-row">
+                <label for="username">Benutzername</label>
+                <input id="username" name="username" type="text" placeholder="Dein Benutzername" required>
+            </div>
+
+            <div class="form-row">
+                <label for="password">Passwort</label>
+                <input id="password" name="password" type="password" placeholder="Dein Passwort" required>
+            </div>
+
+            <button type="submit">Anmelden</button>
+
+            <label class="rememberme">
+                <input type="checkbox" name="remember">
+                Angemeldet bleiben
+            </label>
+        </form>
+    </main>
+</body>
+</html>

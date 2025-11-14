@@ -1,0 +1,159 @@
+/* --- Layout / Container --- */
+body {
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+    background: #f3f4f6;
+}
+
+.center-wrap {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    padding: 24px;
+}
+
+    .card h1 {
+        margin: 0 0 16px;
+        color: #E663D3;
+        font-size: 24px;
+    }
+
+/* --- Flash Messages (Erfolg / Fehler) --- */
+.flash {
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+    .flash.success {
+        background-color: #c8ffc8;
+        color: #146314;
+        border: 2px solid #7ed37e;
+    }
+
+    .flash.error {
+        background-color: #ffd6d6;
+        color: #b00000;
+        border: 2px solid #ff7b7b;
+    }
+
+/* --- Avatar Bereich --- */
+.avatar-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden; /* schneidet überstehendes Bild ab */
+    margin: 0 auto 16px; /* zentriert + Abstand nach unten */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2; /* Hintergrund, falls kein Bild da ist */
+    border: 2px solid #000; /* optionaler schwarzer Rand */
+}
+
+    /* Das eigentliche Bild */
+    .avatar-wrapper img.avatar {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* passt Bild an ohne Verzerren */
+        border-radius: 50%; /* rund machen */
+    }
+
+    /* Platzhalter, wenn kein Bild vorhanden ist */
+    .avatar-wrapper .avatar.placeholder {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px dashed #999;
+        color: #777;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+/* --- Formular --- */
+form label {
+    display: block;
+    font-size: 14px;
+    margin: 10px 0 6px;
+    color: #333;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px dashed #bbb;
+    border-radius: 10px;
+    background: #fafafa;
+    cursor: pointer;
+}
+
+/* --- Buttons --- */
+.button1 {
+    display: inline-block;
+    background-color: #E663D3;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,.12);
+}
+
+    .button1:hover {
+        background-color: #c94fb7;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 14px rgba(0,0,0,.18);
+    }
+
+/* Link-Button (Zurück) */
+a.button-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #333;
+    text-decoration: none;
+    padding: 6px 8px;
+    border-radius: 8px;
+}
+
+    a.button-link:hover {
+        background: #f2e7f0;
+    }
+
+/* --- Logout-Button für Menüs / Drops --- */
+.logout {
+    display: inline-block;
+    background: #FF87C8;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+
+    .logout:hover {
+        background: #ff5db8;
+        transform: scale(1.08);
+        box-shadow: 0 3px 8px rgba(0,0,0,.2);
+    }

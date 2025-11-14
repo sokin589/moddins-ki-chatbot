@@ -1,0 +1,19 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Erfolgreich registriert</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/formate.css') }}">
+</head>
+<body>
+    <main class="center-wrap">
+        <div class="card">
+            <h1>🎉 Erfolgreich registriert!</h1>
+            <p>Du kannst dich jetzt einloggen oder zur Startseite zurückkehren.</p>
+            <a href="{{ url_for('index') }}" class="button">Startseite</a>
+            <a href="{{ url_for('anmelden') }}" class="button">Anmelden</a>
+
+        </div>
+    </main>
+</body>
+</html>

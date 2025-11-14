@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>"Moddins-Ki-Chatbot</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/jp.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="controls">
+            <h1>Chat</h1>
+            <button id="new-chat" class="circle" name="newchat">+</button>
+            {% if user and user.avatar %}
+            <button class="acc" id="ping">
+                <img src="{{ url_for('static', filename=user.avatar) }}" alt="Profilbild" class="avatar">
+            </button>
+            {% else %}
+            <button class="acc" id="ping">👤</button>
+            {% endif %}
+            <div id="box" class="hidden">
+                <a href="{{ url_for('profile') }}"class="logout">Profilbild ändern</a>
+                <a href="{{ url_for('logout') }}" class="logout">logout</a>
+            </div>
+        </div>
+        <div id="chat-list" class="chat-list">
+            {% for ch in chats %}
+            <div class="chat-item" data-id="{{ ch.id }}">
+                <span class="title">{{ ch.title }}</span>
+                <button class="more" aria-label="Mehr">⋯</button>
+            </div>
+            {% endfor %}
+        </div>
+    </aside>
+    <main class="chatbox">
+        <a href="{{ url_for('clear_chats') }}" class="trash">🗑️</a>
+        <button class="farbe" id="colour">⚙️</button>
+        <div id="messages" class="messages"></div>
+        <input class="schreiben" id="schreiben" name="write" type="text" placeholder="Schreiben sie etwas">
+    </main>
+</body>
+</html>

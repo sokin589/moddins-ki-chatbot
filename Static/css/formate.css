@@ -1,0 +1,118 @@
+/* --- Gesamte Seite --- */
+body {
+    margin: 0; /* Kein Rand */
+    height: 100vh; /* 100% der Bildschirmhöhe */
+    display: flex; /* Flexbox aktivieren */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
+    background-color: #f3f4f6; /* Hellgrauer Hintergrund */
+    font-family: Arial, sans-serif;
+}
+
+/* --- Box (Karte) in der Mitte --- */
+.card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+    /* --- Überschrift und Text --- */
+    .card h1 {
+        color: #E663D3;
+        margin-bottom: 20px;
+    }
+
+    .card p {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+/* --- Buttons (echte <button>-Elemente) --- */
+button {
+    background-color: #E663D3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    button:hover {
+        background: #E663D3;
+        transform: scale(1.05);
+        ;
+    }
+
+/* --- Links, die wie Buttons aussehen sollen (<a class="button">) --- */
+a.button {
+    display: inline-block;
+    background-color: #E663D3;
+    color: white;
+    text-decoration: none; /* keine Unterstreichung */
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 8px 6px; /* etwas Abstand zwischen den Links */
+    transition: background-color 0.2s ease;
+}
+
+    a.button:hover {
+        background: #E663D3;
+        transform: scale(1.05);
+    }
+
+
+/* Zeile mit Label links & Input rechts, zentriert in der Karte */
+.form-row {
+    display: flex;
+    justify-content: center; /* Zeile in der Karte zentrieren */
+    align-items: center;
+    gap: 12px; /* Abstand zwischen Label & Input */
+    margin: 10px 0;
+}
+
+    /* Label-Spalte (gleiche Breite für schöne Ausrichtung) */
+    .form-row > label {
+        width: 140px; /* bei Bedarf anpassen */
+        text-align: right;
+        font-weight: 600;
+    }
+
+   
+    .form-row > input {
+        width: 220px; /* bei Bedarf anpassen */
+        padding: 5px 10px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+
+.card button {
+    display: block;
+    margin: 16px auto 8px;
+}
+
+
+.rememberme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+    .rememberme input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: #E663D3;
+        cursor: pointer;
+    }
+

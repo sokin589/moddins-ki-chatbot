@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Profil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profil.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="center-wrap">
+    <main class="card" style="max-width:420px;">
+        <h1>Profilbild</h1>
+
+        {# ← HIER KOMMT DER FLASH-BLOCK HIN! #}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, msg in messages %}
+        <div class="flash {{ category }}">{{ msg }}</div>
+        {% endfor %}
+        {% endwith %}
+
+        <div class="avatar-wrapper">
+            {% if user.avatar %}
+            <img src="{{ url_for('static', filename=user.avatar) }}" alt="Profilbild" class="avatar">
+            {% else %}
+            <div class="avatar placeholder">Kein Bild</div>
+            {% endif %}
+        </div>
+
+        <form method="POST" action="{{ url_for('profile') }}" enctype="multipart/form-data">
+            <label for="avatar">Neues Bild hochladen:</label>
+            <input id="avatar" name="avatar" type="file" accept="image/*">
+
+            <p>
+                <button class="button1" type="submit">Hochladen</button>
+            </p>
+        </form>
+
+        <p>
+            <a class="button1" href="{{ url_for('chatbot') }}">← Zurück</a>
+        </p>
+    </main>
+</body>
+</html>

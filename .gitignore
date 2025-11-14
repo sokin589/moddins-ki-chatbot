@@ -1,0 +1,15 @@
+# Visual Studio / Editor
+.vs/
+.vscode/
+
+# Python Caches
+__pycache__/
+*.pyc
+
+# Virtuelle Umgebungen
+venv/
+env/
+
+# Lokale Datenbanken
+site.db
+*.sqlite3
