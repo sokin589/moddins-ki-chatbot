@@ -36,6 +36,7 @@
     <Folder Include="templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="static\css\Admin.css" />
     <Content Include="static\css\formate.css" />
     <Content Include="static\css\profil.css" />
